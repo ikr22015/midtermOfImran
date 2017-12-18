@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import databases.ConnectDB;
+import databases.User;
 
 /*
  *Created by PIIT_NYA on 04/22/2017.
@@ -33,10 +34,16 @@ public class Numbers {
 		algo.selectionSort(num);
 		long selectionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of "+ num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
-        connectDB.InsertDataFromArryToMySql(num, "selection_sort", "SortingNumbers");
-        List<String> numbers = connectDB.readDataBase("selection_sort", "SortingNumbers");
-        for(String st:numbers){
-        	System.out.println(st);
+        //connectDB.InsertDataFromArryToMySql(num, "selection_sort", "SortingNumbers");
+		//List<String> numbers = connectDB.readDataBase("selection_sort", "SortingNumbers");
+
+		/*
+			I have used mongoDB
+		 */
+		//ConnectDB.insertToMongoDB(new User("Amy Blackwood", 6));
+		List<User> numbers = connectDB.readFromMongoDB();
+        for(User st:numbers){
+        	System.out.println("Student ID: "+st.getId()+" and Student Name: "+st.getName());
         }
 		int n = num.length;
 		randomize (num, n);
@@ -46,6 +53,14 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 
 		//Continue for rest of the Sorting Algorithm....
+
+		//Bubble Sort
+		algo.bubbleSort(num);
+		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
+
+		//MergeSort Sort
+		algo.mergeSort(num);
+		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 
 	}
 
