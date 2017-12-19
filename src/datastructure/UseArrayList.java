@@ -44,7 +44,7 @@ public class UseArrayList {
 			System.out.println(als);
 		}
 
-		//Storing all the sorted data into one of the databases.
+		//Storing all the sorted data into the mongo databases.
 		try {
 			//mongoDB Connection
 			MongoClient mongo = new MongoClient("localhost", 27017);
@@ -60,9 +60,5 @@ public class UseArrayList {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-
-	
-
 	}
-
 }
