@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 
-public class Stock {
+public class StockAndLinkedList {
 
     public static void main(String args[]) {
 
@@ -42,10 +42,21 @@ public class Stock {
             //Iv'e  split whole data to each words.
             String[] words = data.split(" ");
 
+            //Adding all words into LinkedList
+            LinkedList<String> st =new LinkedList<String>();
+            for (int i = 0; i < words.length; i++){
+                st.add(words[i]);
+            }
+
+            Iterator<String> itr = st.iterator();
+
+            while (itr.hasNext()){
+                System.out.println(itr.next());
+            }
 
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }/********************* END Word storing and retrieving as FIFO from LinkedList***************/
 
 
 
