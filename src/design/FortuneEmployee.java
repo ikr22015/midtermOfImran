@@ -1,5 +1,7 @@
 package design;
 
+import java.util.Scanner;
+
 public class FortuneEmployee {
 
 	/**
@@ -14,8 +16,32 @@ public class FortuneEmployee {
 	 *
 	 **/
 	public static void main(String[] args) {
-		
 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Employee Name :");
+		String employeeName = sc.next();
+
+		System.out.println("Enter Employee ID :");
+		int employeeID = sc.nextInt();
+
+//		System.out.println("Enter Employee's joining date :");
+//		String joining = sc.next();
+//
+//		System.out.println("Enter Employee Position :");
+//		String employeePosition = sc.next();
+//
+//		System.out.println("Activity : BEST, GOOD, or AVERAGE");
+//		String activity = sc.next();
+//
+//		System.out.println("Enter Employee's Yearly Salary :");
+//		int salary = sc.nextInt();
+
+		EmployeeInfo employee = new EmployeeInfo(employeeName,employeeID);
+
+		String name = employee.name;
+		int employeeId = employee.employeeId;
+
+		System.out.println(name+" "+employeeId);
 
 	}
 

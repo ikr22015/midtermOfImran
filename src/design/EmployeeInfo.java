@@ -3,7 +3,10 @@ package design;
 import java.util.Scanner;
 
 public class EmployeeInfo{
-	
+
+	public String name = "Default Name";
+	public int employeeId = 0;
+
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
  * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
@@ -31,10 +34,11 @@ public class EmployeeInfo{
 	 * Must implement below constructor.
 	 */
 	public EmployeeInfo(int employeeId){
-		
+
 	}
     public EmployeeInfo(String name, int employeeId){
-		
+		this.name = name;
+		this.employeeId = employeeId;
 	}
 	
 	/*
@@ -73,7 +77,9 @@ public class EmployeeInfo{
 	}
 	private static class DateConversion {
 
-		public DateConversion(Months months){}
+		public DateConversion(Months months){
+
+		}
 		public static String convertDate(String date) {
 			String [] extractMonth = date.split(",");
 			String givenMonth = extractMonth[0];
