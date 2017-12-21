@@ -13,6 +13,30 @@ public class PrimeNumber {
 		 *
 		 */
 
+		int limit = 1000000;
+
+		System.out.println("Prime numbers between 2 and " + limit);
+
+		//loop through the numbers one by 2
+		for(int i=2; i < 100; i++){
+
+			boolean isPrime = true;
+
+			//check to see if the number is prime
+			for(int j=2; j < i ; j++){
+
+				if(i % j == 0){
+					isPrime = false;
+					break;
+				}
+			}
+			// print the number
+			if(isPrime)
+
+				System.out.println(i + " ");
+
+		}
+
 	}
 
 }
