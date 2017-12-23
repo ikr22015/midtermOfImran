@@ -2,15 +2,27 @@ package myDesign;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class PensionCalculation {
-    public static int calculatePension(int salary){
-        LocalDate start = LocalDate.of(2017,9,7);
-        //LocalDate end = LocalDate.of(2014, 2, 28); // use for age-calculation: LocalDate.now()
+    public static int calculatePension(int salary, String joiningDate){
+        //Spit string date and push into stack
+        String[] date = joiningDate.split(",");
+        Stack st = new Stack();
+        st.push(date);
+        //Convert spited string date into integer
+        int mm = Integer.parseInt(date[0]);
+        int dd = Integer.parseInt(date[1]);
+        int yyyy = Integer.parseInt(date[2]);
+        System.out.println(yyyy+mm+dd);
+
+        //calculating job age
+        LocalDate start = LocalDate.of(yyyy,mm,dd);
         LocalDate today = LocalDate.now();
         long jobAge = ChronoUnit.YEARS.between(start, today);
-        //System.out.println(jobAge); // 17
 
+        //Put two condition to calculate job age
         int pension = 0;
         if(jobAge < 2) {
             pension = (salary * 8) / 100;
