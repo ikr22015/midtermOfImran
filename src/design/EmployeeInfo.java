@@ -60,6 +60,7 @@ public class EmployeeInfo{
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
+
 	public static int calculateEmployeePension(){
 		int total=0;
 		Scanner sc  = new Scanner(System.in);
@@ -75,9 +76,14 @@ public class EmployeeInfo{
 
 		return total;
 	}
-	private static class DateConversion {
+	public static class DateConversion {
 
-		public DateConversion(Months months){
+		public DateConversion(){
+
+		}
+
+
+		private DateConversion(Months months){
 
 		}
 		public static String convertDate(String date) {

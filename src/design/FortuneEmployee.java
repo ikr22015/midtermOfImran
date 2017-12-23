@@ -19,29 +19,29 @@ public class FortuneEmployee {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Employee Name :");
-		String employeeName = sc.next();
+		String employeeName = sc.nextLine();
 
 		System.out.println("Enter Employee ID :");
 		int employeeID = sc.nextInt();
+		sc.nextLine(); //Consume newline left-over
 
-//		System.out.println("Enter Employee's joining date :");
-//		String joining = sc.next();
+		System.out.println("Employee's Joining Date :");
+		String join = sc.nextLine();
 //
-//		System.out.println("Enter Employee Position :");
-//		String employeePosition = sc.next();
+//		System.out.println("Employee's Position :");
+//		String position = sc.nextLine();
 //
-//		System.out.println("Activity : BEST, GOOD, or AVERAGE");
-//		String activity = sc.next();
+//		System.out.println("Employee's Activity :");
+//		String activity = sc.nextLine();
 //
-//		System.out.println("Enter Employee's Yearly Salary :");
-//		int salary = sc.nextInt();
+//		System.out.println("Enter Employee's Salary :");
+//		long salary = sc.nextLong();
+
 
 		EmployeeInfo employee = new EmployeeInfo(employeeName,employeeID);
+		System.out.println(employee.employeeId+" "+employee.name);
 
-		String name = employee.name;
-		int employeeId = employee.employeeId;
-
-		System.out.println(name+" "+employeeId);
+		employee.calculateEmployeePension();
 
 	}
 
